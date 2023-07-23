@@ -1,4 +1,4 @@
-const printName = function(fName, lName) {
+const printName = (fName, lName) => {
   return(`${fName} ${lName}`);
 };
 

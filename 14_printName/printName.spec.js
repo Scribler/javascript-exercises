@@ -1,6 +1,6 @@
 let printName = require('./printName');
-describe('printName', function(){
-  test('Show "My Name"', function(){
+describe('printName', () => {
+  test('Show "My Name"', () => {
     expect(printName('John', 'Dallas')).toEqual('John Dallas');
   });
 });
