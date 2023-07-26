@@ -6,9 +6,6 @@ const reverseString = function(string) {
     reversedArray.unshift(stringArray[letter]);
     reversedString = reversedArray.join('');
   };
-  // console.log(stringArray);
-  // console.log(reversedString);
-
   return reversedString;
 };
 
