@@ -1,21 +1,21 @@
-const mainArray = [0, 4, 2, 1, 8, 9, 20, 12, 7];
-const numsToRemove = [1, 3, 4, 5];
+const mainArray = [1, 2, 3, 4];
 
+const removeFromArray = function(array, ...toRemove) {
+  const arrayToReturn = array;
 
-// const removeFromArray = function(array, ...nums) {
-//   console.log(array)
-// };
-// removeFromArray();
+  console.log(mainArray); // show starting array
+  console.log(`toRemove(array of items to remove): ${toRemove}`); // show items to delete
 
-const addNums = function (...toAdd) {
-  let finalNum = 0;
-  for (const num of toAdd) {
-    finalNum += num;
+  for (const removeThis of toRemove) { // loop through items and remove from array
+    let itemIndex = array.indexOf(removeThis);
+    if (itemIndex >= 0) arrayToReturn.splice(itemIndex, 1);
   }
-  return finalNum;
-}
+  console.log(arrayToReturn);
+  return arrayToReturn;
+};
 
-console.log(addNums(1, 3, 2)); // should print '6'
+// removeFromArray(mainArray, 11, "nachos");
+
 
 // Do not edit below this line
-// module.exports = removeFromArray;
+module.exports = removeFromArray;
