@@ -1,15 +1,13 @@
-
-const leapYears = function(endYear, testYear) {
-  const leapYearsArray = [];
-  let leapStepper;
-  for (let index = 0; index < endYear; index = index + 4) {
-    // leapStepper += 4;
-    leapYearsArray.push(index);
-  }
-  console.log(leapYearsArray);
-  console.log(`Is ${testYear} a leapyear? : ${leapYearsArray.includes(testYear)}`);
+const leapYears = function(year) {
+  return (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0));
+  // if (year % 4 == 0) {
+  //   answer = true;
+  //   if (year % 100 == 0 && year % 400 != 0) {
+  //     answer = false;
+  //   }
+  // }
+  // return answer;
 };
 
-leapYears(400, 200);
 // Do not edit below this line
 module.exports = leapYears;
