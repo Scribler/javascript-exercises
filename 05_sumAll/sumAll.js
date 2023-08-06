@@ -1,35 +1,17 @@
-const sumAll = function(x, y) {
-  let finalNum = 0;
-  let firstNum;
-  let secondNum;
-  if (typeof x !== 'number'|| typeof y !== 'number') {
-    console.log("ERROR");
-    return "ERROR";
+const sumAll = function (small, large) {
+  if (!Number.isInteger(small) || !Number.isInteger(large)) return "ERROR";
+  if (small < 0 || large < 0) return "ERROR";
+  if (small > large) {
+    let temp = small;
+    small = large;
+    large = temp;
   }
-
-  if (x > y && x >= 0 && y >= 0) {
-    firstNum = y;
-    secondNum = x;
-  } else if (x < y && x >= 0 && y >= 0) {
-    firstNum = x;
-    secondNum = y;
-  } else {
-    finalNum = "ERROR";
+  let total = 0;
+  for (let i = small; i <= large; i++) {
+    total += i;
   }
+  return total;
+}
 
-  for (let i = firstNum; i <= secondNum; i++) {
-    (finalNum !== "ERROR") ? finalNum += i : console.log("error");
-  }
-console.log(finalNum);
-return finalNum;
-};
-
-
-
-
-sumAll(3, 1);
-sumAll(1, 3);
-sumAll(1, "3");
-sumAll(1, [90, 1]);
 // Do not edit below this line
 module.exports = sumAll;
